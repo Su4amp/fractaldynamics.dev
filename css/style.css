@@ -1,0 +1,144 @@
+/* Reset de margem e configuração da fonte */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo da barra de navegação */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(51, 51, 51, 0.8); /* Fundo com baixa opacidade */
+    backdrop-filter: blur(10px); /* Desfoque gaussiano */
+    padding: 10px 20px;
+    color: white;
+}
+
+/* Estilo dos links da seção esquerda da navbar */
+.navbar-left .nav-link, 
+.navbar-right a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    position: relative;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Efeito hover nos links */
+.navbar-left .nav-link:hover, 
+.navbar-right a:hover {
+    background-color: #555;
+    transform: scale(1.1);
+}
+
+/* Estilo das linhas antes e depois dos links na seção esquerda da navbar */
+.navbar-left .nav-link::before,
+.navbar-left .nav-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    transition: width 0.3s;
+}
+
+/* Linha antes do link */
+.navbar-left .nav-link::before {
+    background: white;
+    left: 0;
+}
+
+/* Linha depois do link */
+.navbar-left .nav-link::after {
+    background: #29bdef;
+    right: 0;
+}
+
+/* Animação das linhas ao passar o mouse */
+.navbar-left .nav-link:hover::before {
+    width: 100%;
+    transition: width 0.3s ease-in-out 0s;
+}
+
+.navbar-left .nav-link:hover::after {
+    width: 100%;
+    transition: width 0.3s ease-in-out 0.3s;
+}
+
+/* Estilo dos ícones na seção direita da navbar */
+.navbar-right .icon-button img {
+    height: 24px;
+    width: 24px;
+    transition: transform 0.3s;
+}
+
+/* Efeito hover nos ícones */
+.navbar-right .icon-button:hover img {
+    transform: scale(1.2);
+    filter: brightness(0) saturate(100%) invert(56%) sepia(16%) saturate(2150%) hue-rotate(156deg) brightness(96%) contrast(92%);
+}
+
+/* Estilo do logo */
+.logo {
+    height: 40px;
+    margin-right: 20px;
+}
+
+
+/* Estilo do botão "Baixar App" */
+.navbar-right .download-button {
+    background-color: transparent; /* Fundo transparente */
+    border: 2px solid #333; /* Cor da borda cinza mais escuro */
+    padding: 10px 15px;
+    border-radius: 5px;
+    position: relative;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Efeito hover no botão "Baixar App" */
+.navbar-right .download-button:hover {
+    background-color: #555; /* Mudança de cor de fundo no hover */
+    transform: scale(1.1);
+}
+
+/* Estilo da borda branca na parte inferior */
+.navbar-right .download-button::after {
+    content: ''; /* Adiciona um elemento de pseudo-classe */
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: white; /* Cor do traço branco */
+}
+
+/* Responsividade para dispositivos menores */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-left, 
+    .navbar-right {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar-left .nav-link, 
+    .navbar-right a {
+        margin: 5px 0;
+    }
+
+    .logo {
+        margin: 10px 0;
+    }
+}
+
+
+
